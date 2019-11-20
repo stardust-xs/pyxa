@@ -1,0 +1,8 @@
+fuzzywuzzy
+geocoder
+geolocation-python
+googlemaps
+hurry.filesize
+python-Levenshtein
+reverse-geocode
+virtualenv
