@@ -132,3 +132,4 @@ dmypy.json
 # Ignored on-device files
 /publishing_steps.txt
 /test.py
+/files/github_banner.psd
