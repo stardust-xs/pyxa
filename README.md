@@ -29,6 +29,7 @@ An open-source, flexible, high-performance function serving framework for <a hre
 ## Table of Contents
 
 - [Why pyXA?](#why-pyxa)
+    - [What is pyXA?](#what-is-pyxa)
 - [Lets get Started](#lets-get-started)
 - [How this works?](#how-this-works)
 - [In pipeline](#in-pipeline)
@@ -38,4 +39,15 @@ An open-source, flexible, high-performance function serving framework for <a hre
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
-Yeah, I need to update...
+## Why pyXA?
+Running a Conversational Heuristic Assistant (this is about you <a href="https://github.com/xames3/charlotte/">Charlotte</a>) is a pain by itself, but running it parallelly with some high level custom actions comes with whole new set of problems. Deploying them on cloud servers is another pain. So in order to solve this issue, I thought of developing a simple yet fully functional, easily deployable Python package which will not speed up* but would streamline the workflow of the AI Assistants. Well, there's a lot to develop here & even more room for improvement and I've barely started to address this issue. So, I've made the project open-source thus anyone interested in this idea or willing to help me out can contribute and improve the code.
+
+#### What is pyXA?
+pyXA is an open source software library for high-performance complex
+functional programming. Its flexible architecture allows easy deployment
+of its functional usage across a variety of domains.<br>
+Originally inspired by <a href="https://www.tensorflow.org/">TensorFlow</a> & <a href="https://rasa.com/">Rasa</a>, it comes with strong support
+for continuous updates, reliable functions and overall ease of use.
+
+## Lets get Started
+Yeah, I need to update a lot...\*sigh*
