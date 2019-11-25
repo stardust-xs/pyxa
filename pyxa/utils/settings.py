@@ -14,7 +14,11 @@
 # limitations under the License.
 #
 # ======================================================================
-"""Global pyXA settings."""
+"""
+The :mod:`pyxa.utils.settings` module hosts pre-defined values to build
+a composite settings environment, which can affect and/or update all the
+depending values at once.
+"""
 
 # Settings for the package.
 PACKAGE_NAME = 'pyxa'
@@ -22,11 +26,11 @@ PROJECT_NAME = 'pyXA'
 AI_NAME = 'Charlotte'
 # This package adheres to Semantic Versioning Specification (SemVer)
 # starting with version 0.0.1.
-PACKAGE_VERSION = '0.0.1rc1'
+PACKAGE_VERSION = '0.0.2a1'
 
 # Author details.
 AUTHOR = 'XA'
-AUTHOR_EMAIL = MAINTAINER_EMAIL = 'xames3.charlotte@gmail.com'
+AUTHOR_EMAIL = MAINTAINER_EMAIL = 'xames3.developer@gmail.com'
 
 # Local time zone details.
 # You can find all the choices here:
@@ -73,10 +77,3 @@ TEST_HOST_PORT = 2121
 # Sets the logging level to INFO.
 ENV_LOG_LEVEL_NAME = 'PYXA_LOG_LEVEL'
 DEFAULT_LOG_LEVEL = 'INFO'
-
-# Secret keys.
-# Secret keys are the API keys that are needed for using some of the
-# features of pyXA. You can find those details in the respective module.
-GOOGLE_CLOUD_KEY = ''
-DARKSKY_KEY = ''
-TWILIO_KEY = ''
