@@ -12,7 +12,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 #### Added
 - GitHub banner and Table of Contents to the `README.md` file.
-- `Why pyXA?` section in the `README.md`.
+- `Why pyXA?`, `Changelog`, `Contributors` and `License` section in the `README.md`.
 - GitHub changelog banner to the `assets` branch.
 - `changelog.md` file.
 
@@ -25,9 +25,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 #### Fixed
 - `AUTHOR_EMAIL` and `MAINTAINER_EMAIL` to correct email.
 - `changelog.md` headers.
+- Year and Owner name in `LICENSE`.
 
 #### Removed
 - Section for `Secret keys` in `settings.py` and boilerplate code for the keys.
+- Unnecessary comments in `README.md`.
 
 ## [Stable releases]
 ### [0.0.1rc1] - 2019-11-21
