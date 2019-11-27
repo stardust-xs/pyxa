@@ -14,26 +14,43 @@
 # limitations under the License.
 #
 # ======================================================================
-"""pyXA is an open source function serving framework for Charlotte AI.
+"""
+pyXA is an open-source, flexible, high-performance function serving
+framework for Charlotte AI.
 
-pyXA is an open source software library for high-performance complex
-functional programming. Its flexible architecture allows easy deployment
-of its functional usage across a variety of domains.
+It is a software library for performing intricate actions for the
+Natural Language Assistants. It's flexible architecture allows easy
+deployment and robust usage across a variety of domains.
 
 Originally inspired by TensorFlow & Rasa, it comes with strong support
 for continuous updates, reliable functions and overall ease of use.
+
+Read complete documentation at: <https://github.com/xames3/pyxa>.
 """
+
 from __future__ import absolute_import, division, print_function
 
 from setuptools import find_packages, setup
 
-from pyxa.utils.settings import (AUTHOR, MAINTAINER_EMAIL,
-                                 PACKAGE_NAME, PACKAGE_VERSION)
+from pyxa.utils.settings import (AUTHOR, MAINTAINER_EMAIL, PACKAGE_NAME,
+                                 PACKAGE_VERSION)
 
 DOCLINES = __doc__.split('\n')
 
 # This package adheres to Semantic Versioning Specification (SemVer)
 # starting with version 0.0.1.
+# Generic release markers:
+#   X.Y
+#   X.Y.Z   # For bugfix releases
+#
+# Admissible pre-release markers:
+#   X.YaN   # Alpha release
+#   X.YbN   # Beta release
+#   X.YrcN  # Release Candidate
+#   X.Y     # Final release
+#
+# Dev branch marker is: 'X.Y.dev' or 'X.Y.devN' where N is an integer.
+# 'X.Y.dev0' is the canonical version of 'X.Y.dev'
 VERSION = PACKAGE_VERSION
 
 REQUIRED_PACKAGES = [
@@ -43,7 +60,17 @@ REQUIRED_PACKAGES = [
     'googlemaps',
     'hurry.filesize',
     'python-Levenshtein',
-    'reverse-geocode']
+    'reverse-geocode',
+    'jinja2',
+    'pyyaml',
+    'questionary']
+
+
+def use_readme():
+    """Use ``README.md`` file for parsing long description."""
+    with open('README.md') as file:
+        return file.read()
+
 
 setup(name=PACKAGE_NAME,
       version=VERSION,
@@ -54,27 +81,27 @@ setup(name=PACKAGE_NAME,
       maintainer=AUTHOR,
       maintainer_email=MAINTAINER_EMAIL,
       classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Intended Audience :: Developers',
-        'Intended Audience :: Science/Research',
-        'License :: OSI Approved :: Apache Software License',
-        'Operating System :: Microsoft :: Windows :: Windows 10',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3 :: Only',
-        'Topic :: Communications :: Chat',
-        'Topic :: Scientific/Engineering',
-        'Topic :: Scientific/Engineering :: Artificial Intelligence',
-        'Topic :: Software Development',
-        'Topic :: Software Development :: Libraries',
-        'Topic :: Software Development :: Libraries :: Python Modules'
-        ],
+          'Development Status :: 3 - Alpha',
+          'Intended Audience :: Developers',
+          'Intended Audience :: Science/Research',
+          'License :: OSI Approved :: Apache Software License',
+          'Operating System :: Microsoft :: Windows :: Windows 10',
+          'Programming Language :: Python :: 3.5',
+          'Programming Language :: Python :: 3.6',
+          'Programming Language :: Python :: 3.7',
+          'Programming Language :: Python :: 3.8',
+          'Programming Language :: Python :: 3 :: Only',
+          'Topic :: Communications :: Chat',
+          'Topic :: Scientific/Engineering',
+          'Topic :: Scientific/Engineering :: Artificial Intelligence',
+          'Topic :: Software Development',
+          'Topic :: Software Development :: Libraries',
+          'Topic :: Software Development :: Libraries :: Python Modules'
+      ],
       license='Apache 2.0',
-      description=DOCLINES[0],
-      long_description='\n'.join(DOCLINES[2:]),
-      long_description_content_type='text/plain',
+      description=f'{DOCLINES[1]} {DOCLINES[2]}',
+      long_description=use_readme(),
+      long_description_content_type='text/markdown',
       keywords='pyxa charlotte ai artificial intelligence',
       zip_safe=False,
       install_requires=REQUIRED_PACKAGES,
@@ -82,7 +109,7 @@ setup(name=PACKAGE_NAME,
       include_package_data=True,
       packages=find_packages(),
       entry_points={
-        'console_scripts': [
-            'pyxa = pyxa.parser:main'
-            ]
-        })
+          'console_scripts': [
+              'pyxa = pyxa.parser:main'
+          ]
+      })
