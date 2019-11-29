@@ -126,10 +126,11 @@ dmypy.json
 .pyre/
 
 # Ignored on-device directories
-/files/temp/
-/tests/
+files/temp/
+tests/
+.vscode/
 
 # Ignored on-device files
-/publishing_steps.txt
-/test.py
-/files/github_banner.psd
+publishing_steps.txt
+test.py
+files/github_banner.psd
