@@ -15,17 +15,21 @@
 #
 # ======================================================================
 """
-The :mod:`pyxa.utils.settings` module hosts pre-defined values to build
-a composite settings environment, which can affect and/or update all the
-depending values at once.
+The `pyxa.utils.settings` module hosts package constants.
+
+These are pre-defined values to build a composite settings environment,
+which can affect and/or update all the depending values at once. These
+values should be checked and updated periodically.
 """
 
 # Settings for the package.
 PACKAGE_NAME = 'pyxa'
 PROJECT_NAME = 'pyXA'
 AI_NAME = 'Charlotte'
+
 # This package adheres to Semantic Versioning Specification (SemVer)
 # starting with version 0.0.1.
+# You can read about it here: https://semver.org/spec/v2.0.0.html
 PACKAGE_VERSION = '0.0.2a1'
 
 # Author details.
@@ -46,23 +50,23 @@ LANGUAGE_CODE = 'en-gb'
 DEFAULT_CHARSET = 'utf-8'
 
 # Default package structure.
-# You can override this while creating project. pyXA recommends you not
-# to do it so.
+# You can override this later. pyXA recommends against doing it.
 # User config settings.
 USER_PATH = 'user'
 USER_PROFILE_PATH = USER_PATH + '/profile.yml'
+
 # Cache & garbage collector settings.
 FILES_PATH = 'files'
 TEMP_PATH = FILES_PATH + '/temp/'
 CACHE_PATH = TEMP_PATH + '/cache/'
+
 # Database settings.
 DATABASE_PATH = 'database'
 DATABASE_FILE_PATH = DATABASE_PATH + '/tracker_store.db'
+
 # Virtual environment settings.
-VIRTUALENV_NAME = 'venv'
-VIRTUALENV_PATH = VIRTUALENV_NAME + '/'
-VIRTUALENV_ACTIVATE_PATH = VIRTUALENV_NAME + '/Scripts/activate'
-VIRTUALENV_DEFAULT_SETTING = '--system-site-packages'
+VENV_NAME = 'venv'
+
 # Frontend & UI settings.
 FRONTEND_PATH = 'frontend'
 

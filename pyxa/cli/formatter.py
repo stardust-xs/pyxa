@@ -14,7 +14,16 @@
 # limitations under the License.
 #
 # ======================================================================
-"""Custom Usage, MetaVar, Help & Description Formatter."""
+"""
+The `pyxa.cli.formatter` module provides custom formatter.
+
+These custom formatter inherits RawTextHelpFormatter and uses it's
+methods to override them. It provides custom ``Usage`` and ``MetaVar``
+sections.
+"""
+# The following comment should be removed at some point in the future.
+# pylint: disable=import-error
+# pylint: disable=no-name-in-module
 
 import argparse
 import os
@@ -22,12 +31,12 @@ import textwrap
 
 
 class PyXAHelpFormatter(argparse.RawTextHelpFormatter):
-    """Captilizes the usage text."""
+    """Overrides RawTextHelpFormatter class."""
 
     # You can find the reference code here:
     # https://stackoverflow.com/questions/35847084/customize-argparse-help-message
     def add_usage(self, usage, actions, groups, prefix=None):
-
+        """Captilizes the usage text."""
         if prefix is None:
             prefix = 'Usage: ' + '\n' + '  '
 
@@ -37,14 +46,15 @@ class PyXAHelpFormatter(argparse.RawTextHelpFormatter):
     # You can find the reference code here:
     # https://stackoverflow.com/questions/35917547/python-argparse-rawtexthelpformatter-with-line-wrap
     def _split_lines(self, text, width):
+        """Unwraps the lines to width of the terminal."""
         text = self._whitespace_matcher.sub(' ', text).strip()
-        return textwrap.wrap(text, (os.get_terminal_size().columns / 1.3))
+        return textwrap.wrap(text, round(os.get_terminal_size().columns / 1.3))
 
     # You can find the reference code here:
     # https://stackoverflow.com/questions/13423540/argparse-subparser-hide-metavar-in-command-listing
     def _format_action(self, action):
-        parts = super(argparse.RawTextHelpFormatter,
-                      self)._format_action(action)
+        """Hides MetaVar in command listing."""
+        parts = super()._format_action(action)
         if action.nargs == argparse.PARSER:
             parts = '\n'.join(parts.split('\n')[1:])
         return parts

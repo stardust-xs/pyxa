@@ -27,8 +27,9 @@ for continuous updates, reliable functions and overall ease of use.
 
 Read complete documentation at: <https://github.com/xames3/pyxa>.
 """
-
-from __future__ import absolute_import, division, print_function
+# The following comment should be removed at some point in the future.
+# pylint: disable=import-error
+# pylint: disable=no-name-in-module
 
 from setuptools import find_packages, setup
 
@@ -39,18 +40,6 @@ DOCLINES = __doc__.split('\n')
 
 # This package adheres to Semantic Versioning Specification (SemVer)
 # starting with version 0.0.1.
-# Generic release markers:
-#   X.Y
-#   X.Y.Z   # For bugfix releases
-#
-# Admissible pre-release markers:
-#   X.YaN   # Alpha release
-#   X.YbN   # Beta release
-#   X.YrcN  # Release Candidate
-#   X.Y     # Final release
-#
-# Dev branch marker is: 'X.Y.dev' or 'X.Y.devN' where N is an integer.
-# 'X.Y.dev0' is the canonical version of 'X.Y.dev'
 VERSION = PACKAGE_VERSION
 
 REQUIRED_PACKAGES = [
@@ -60,14 +49,11 @@ REQUIRED_PACKAGES = [
     'googlemaps',
     'hurry.filesize',
     'python-Levenshtein',
-    'reverse-geocode',
-    'jinja2',
-    'pyyaml',
-    'questionary']
+    'reverse-geocode']
 
 
-def use_readme():
-    """Use ``README.md`` file for parsing long description."""
+def use_readme() -> str:
+    """Uses ``README.md`` file for parsing long description."""
     with open('README.md') as file:
         return file.read()
 
@@ -96,7 +82,7 @@ setup(name=PACKAGE_NAME,
           'Topic :: Scientific/Engineering :: Artificial Intelligence',
           'Topic :: Software Development',
           'Topic :: Software Development :: Libraries',
-          'Topic :: Software Development :: Libraries :: Python Modules'
+          'Topic :: Software Development :: Libraries :: Python Modules',
       ],
       license='Apache 2.0',
       description=f'{DOCLINES[1]} {DOCLINES[2]}',
@@ -110,6 +96,6 @@ setup(name=PACKAGE_NAME,
       packages=find_packages(),
       entry_points={
           'console_scripts': [
-              'pyxa = pyxa.parser:main'
-          ]
+              'pyxa = pyxa.parser:main',
+          ],
       })
