@@ -11,28 +11,45 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### [0.0.2a1] - 2019-11-22
 
 #### Added
-- GitHub banner and Table of Contents to the `README.md` file.
-- `Why pyXA?`, `Changelog`, `Contributors` and `License` section in the `README.md`.
-- GitHub changelog banner to the `assets` branch.
+- github banner and Table of Contents to the `README.md` file.
+- `Why pyXA?`, `Changelog`, `Contributors` and `License` section in the `README.md` file.
+- github changelog banner to the `assets` branch.
 - `changelog.md` file.
+- a new function, `check_version` in `common.py`
+- directory and file symlinks to be ignored in `.gitignore`.
+- user data in `profile.yml` file.
 
 #### Changed
-- version to `0.0.2a1`.
+- version to `0.0.2a1` in `settings.py`.
 - `exceptions.py` docstring. Now it elaborately describes what it does.
 - docstrings of all the classes under `exceptions.py`.
-- `settings.py` docstring. Now it clearly describes why it is there.
+- `settings.py`, `setup.py`, `parser.py`, `exceptions.py`, `common.py`, `strings.py` docstring. 
+- `setup.py` now uses `README.md` file for its long description.
+- formatted all scripts with pylint and pyright.
+- docstrings for all the scripts.
+- `check_version` is now used for displaying the version details.
+- `virtualenv` is now `venv` by default for all options and arguments.
 
 #### Fixed
 - `AUTHOR_EMAIL` and `MAINTAINER_EMAIL` to correct email.
 - `changelog.md` headers.
-- Year and Owner name in `LICENSE`.
+- year and qwner name in `LICENSE` file.
+- `Bad first argument given to super()` warning in `formatter.py`.
+- rounded output of `_split_lines` method in `formatter.py`.
 
 #### Removed
-- Section for `Secret keys` in `settings.py` and boilerplate code for the keys.
-- Unnecessary comments in `README.md`.
+- section for `Secret keys` in `settings.py` and boilerplate code for the keys.
+- unnecessary comments in `README.md` file.
+- `virtualenv` from `requirements.txt` file in favor of `venv`.
+- removed '/' from the `.gitignore` file for added files and folders.
+- `__future__` imports as the project doesn't support backporting.
+- `logger` from `parser.py`.
+- `FileNotFound` and `PathNotFound` exception in favor of builtin `FileNotFoundError` and `NotADirectoryError` respectively.
+- `user.py` module and creating profile functionality.
+- strings associated with `profile` subparser object from `strings.py`.
 
 ## [Stable releases]
 ### [0.0.1rc1] - 2019-11-21
 
 #### Added
-- Created project and added to this repository.
+- project to this repository.
