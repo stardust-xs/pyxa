@@ -5,6 +5,3 @@ googlemaps
 hurry.filesize
 python-Levenshtein
 reverse-geocode
-jinja2
-pyyaml
-questionary
