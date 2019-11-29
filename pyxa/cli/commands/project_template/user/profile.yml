@@ -1,0 +1,25 @@
+# This file contains the user specific details.
+
+# General
+# User specific details that the NLA would use for quick assist and user reference.
+user:
+    name: "user_name"
+    address_as: "user_addressing_name"
+
+# Natural Language Assistant
+# Character specifications for the NLA.
+ai:
+    name: charlotte     # [optional] (default: charlotte)
+
+# Security keys
+# Keys for making API calls.
+key:
+    google_cloud: "google_cloud_platform_api_key"
+    darksky: "darksky_api_key"
+    twilio:     # [optional]
+
+# Ports
+# Ports on which the actions & hosting will be performed.
+port:
+    action_server: 6969     # [optional] (default: 6969)
+    socketio: 1414     # [optional] (default: 1414)

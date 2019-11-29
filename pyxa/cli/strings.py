@@ -14,7 +14,10 @@
 # limitations under the License.
 #
 # ======================================================================
-"""Usage, help and descriptions for parsers & subparsers."""
+"""
+The `pyxa.cli.strings` module holds usage, help and descriptions strings
+for the parsers & subparsers.
+"""
 
 # Parent parser object.
 epilog = ('For specific information about a particular command, run "pyxa '
@@ -26,20 +29,15 @@ epilog = ('For specific information about a particular command, run "pyxa '
 create_usage = ('pyxa create [options] --name <project name> --path <local '
                 'project path> ...\n  '
                 'pyxa create [options] project --name <project name> ...\n  '
-                'pyxa create [options] profile --project-path <existing '
-                'project path> ...\n  '
-                'pyxa create [options] venv --venv-name <virtualenv '
-                'name> ...\n  '
+                'pyxa create [options] venv --venv <venv name> ...\n  '
                 'pyxa create [options] <no arguments> ...')
 create_help = ('Create project directory structure for the given project '
                'name in the current directory or optionally in the given '
-               'directory to unpack the necessary dependencies into it and '
-               'build it further. Note that it will unpack everything in '
-               '"~/.charlotte/" folder if no name is specified for the '
-               'project.')
+               'directory to unpack the necessary dependencies into it. Note '
+               'that it will unpack everything in "~/.charlotte/" directory '
+               'if no name is specified for the project.')
 create_description = ('Description:\n  Getting started for Charlotte:\n\n  '
                       '- Creates your Charlotte AI project structure.\n  '
-                      '- Creates local user profile.\n  '
                       '- Creates virtual environment if necessary.\n\n  '
                       'Although everything is configured at the beginning, '
                       'you can change and update things as per your needs.')
@@ -53,44 +51,27 @@ project_help = ('Create project directory structure for the given project '
                 'name in the current directory or optionally in the given '
                 'directory to unpack the necessary dependencies into it. '
                 'Note that it will unpack everything in "~/.charlotte/" '
-                'folder if no name is specified for the project (similar '
-                'to the "pyxa create" except it won\'t create the profile).')
+                'directory if no name is specified for the project.')
 project_description = ('Description:\n  Similar to "pyxa create":\n\n  '
-                       '- Creates your Charlotte AI project structure.\n  '
-                       '- Doesn\'t creates local user profile though.\n\n  '
+                       '- Creates your Charlotte AI project structure.\n\n  '
                        'Although everything is configured at the beginning, '
                        'you can change and update things as per your needs.')
 
-# Create profile subparser object.
-profile_usage = ('pyxa create profile --project-path '
-                 '<existing project path> ...')
-profile_help = ('Create user profile in the existing project directory. This '
-                'profile is created at default path, "~/.<project directory>/'
-                'user/". Generally you will need to specify "--project-path" '
-                'when using this option.')
-profile_description = ('Description:\n  Creates user profile:\n\n  '
-                       '- Creates the local user profile in easy-to-deal '
-                       '"yaml" format.\n  '
-                       '- This profile hosts bunch of user specific values '
-                       'which are used while building your project.\n  '
-                       '- These config values can be changed later.\n  '
-                       '- Existing profile will be overwritten.')
-
-# Create virtual subparser object.
-venv_usage = ('pyxa create venv --venv-name <virtualenv name> '
-              '--project-path <existing project path> ...\n  '
-              'pyxa create venv --project-path <existing project path> ...')
+# Create venv subparser object.
+venv_usage = ('pyxa create venv --venv <venv name> '
+              '--path <path to venv> ...\n  '
+              'pyxa create venv --path <path to venv> ...')
 venv_help = ('Create virtual environment in the existing project directory. '
              'This virtual environment is created at default '
-             'path, "~/.<project directory>/<virtualenv name>/". The '
+             'path, "~/.<project directory>/<venv name>/". The '
              'default name for the environment is "venv" but can be '
-             'changed by specifying the "--venv-name" argument.')
+             'changed by specifying the "--venv" argument.')
 venv_description = ('Description:\n  Creates virtual environment:\n\n  '
                     '- Virtual environment will be created in the project '
                     'directory.\n  '
                     '- Default name of the virtual environment is '
                     '"venv". You can override this by specifying '
-                    '"--venv-name" argument.\n\n  '
+                    '"--venv" argument.\n\n  '
                     'Virtual environment has access to global site packages '
                     'by default. Currently there isn\'t any option available '
                     'to override it.')

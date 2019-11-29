@@ -14,17 +14,28 @@
 # limitations under the License.
 #
 # ======================================================================
-"""Passing arguments."""
+"""
+The `pyxa.cli.arguments` module allows passing arguments to a command.
 
-from __future__ import absolute_import
+These arguments often begin with ``-`` or ``--``.
+
+All the arguments added in this module should begin with the keyword
+``pass`` and end with the keyword ``arg`` seperated with underscores
+between them.
+
+For example:
+    * pyxa create project --name <these come here>
+    * pyxa create project --name <these come here> --path <and here>
+"""
+# The following comment should be removed at some point in the future.
+# pylint: disable=import-error
+# pylint: disable=no-name-in-module
 
 import argparse
 import logging
-from typing import Optional, Text, Union
+from typing import Optional, Union
 
-from pyxa.utils.settings import (AI_NAME,
-                                 NAUGHTY_HOST_PORT,
-                                 VIRTUALENV_NAME)
+from pyxa.utils.settings import AI_NAME, VENV_NAME
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -32,49 +43,34 @@ logger.setLevel(logging.DEBUG)
 
 def pass_project_name_arg(parser: Union[argparse.ArgumentParser,
                                         argparse._ActionsContainer],
-                          help: Text,
-                          default: Optional[Text] = AI_NAME.lower()):
-    """Argument for adding the project name."""
+						  help: str,
+                          default: Optional[str] = AI_NAME.lower()) -> None:
+    """Passes argument for the project name."""
     parser.add_argument('--name', default=default,
                         help=help, type=str, metavar='<name>')
 
 
 def pass_project_path_arg(parser: Union[argparse.ArgumentParser,
                                         argparse._ActionsContainer],
-                          help: Text,
-                          default: Optional[Text] = 'Current directory'):
-    """Argument for adding the project path."""
+                          help: str,
+                          default: Optional[str] = 'current directory'
+                          ) -> None:
+    """Passes argument for the project path."""
     parser.add_argument('--path', default=default,
                         help=help, type=str, metavar='<path>')
 
 
-def pass_existing_project_path_arg(parser: Union[argparse.ArgumentParser,
-                                                 argparse._ActionsContainer],
-                                   help: Text):
-    """Argument for adding the existing project path."""
-    parser.add_argument('--project-path', help=help,
-                        type=str, metavar='<path>')
-
-
 def pass_venv_name_arg(parser: Union[argparse.ArgumentParser,
                                      argparse._ActionsContainer],
-                       help: Text,
-                       default: Optional[Text] = VIRTUALENV_NAME):
-    """Argument for creating virtual environment in the project."""
-    parser.add_argument('--venv-name', default=default,
+                       help: str,
+                       default: Optional[str] = VENV_NAME) -> None:
+    """Passes argument for name of the virtual environment."""
+    parser.add_argument('--venv', default=default,
                         help=help, type=str, metavar='<name>')
 
 
-def pass_socket_port_arg(parser: Union[argparse.ArgumentParser,
-                                       argparse._ActionsContainer],
-                         help: Text,
-                         default: Optional[int] = NAUGHTY_HOST_PORT):
-    """Argument for SocketIO port."""
-    parser.add_argument('--socket-port', default=default,
-                        help=help, type=int, metavar='<port>')
-
-
-def add_logging_options(parser: argparse.ArgumentParser):
+def add_logging_options(parser: Union[argparse.ArgumentParser,
+                                      argparse._ActionsContainer]) -> None:
     """Adds logging options to the parser object."""
     parser = parser.add_argument_group('Logging Options')
     parser.add_argument('-v',
@@ -94,6 +90,6 @@ def add_logging_options(parser: argparse.ArgumentParser):
                         action='store_const',
                         dest='loglevel',
                         help=('Give less output. Decrease output verbosity '
-                              '(respond only to WARNING, ERROR, and CRITICAL '
-                              'logging levels).'),
+                              '(respond only to WARNING, ERROR, and '
+                              'CRITICAL logging levels).'),
                         const=logging.WARNING)

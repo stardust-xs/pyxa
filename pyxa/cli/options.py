@@ -14,40 +14,44 @@
 # limitations under the License.
 #
 # ======================================================================
-"""Optional arguments for commands."""
+"""
+The `pyxa.cli.options` module enables optional arguments for commands.
+
+These optional arguments are generally passed after a subparser.
+
+For example:
+    * pyxa create <these come here>
+    * pyxa create project <these come here>
+
+All the arguments added in this module should begin with the command
+name and end with the keyword ``arg`` seperated with underscores between
+them.
+"""
+# The following comment should be removed at some point in the future.
+# pylint: disable=import-error
+# pylint: disable=no-name-in-module
 
 import argparse
 
-from pyxa.cli.arguments import (pass_existing_project_path_arg,
-                                pass_project_name_arg,
+from pyxa.cli.arguments import (pass_project_name_arg,
                                 pass_project_path_arg,
-                                pass_socket_port_arg,
                                 pass_venv_name_arg)
 
 
 def create_args(parser: argparse.ArgumentParser):
-    """Parses arguments for `create` command."""
+    """Parses arguments for ``create`` command."""
     pass_project_name_arg(parser, help='Name of the application or project.')
     pass_project_path_arg(parser, help='Path to the project directory.')
     pass_venv_name_arg(parser, help='Name of the virtual environment.')
-    pass_socket_port_arg(parser, help=('SocketIO port number, or '
-                                       'http://localhost:<port>.'))
 
 
 def create_project_args(parser: argparse.ArgumentParser):
-    """Parses arguments for `create project` command."""
+    """Parses arguments for ``create project`` command."""
     pass_project_name_arg(parser, help='Name of the application or project.')
     pass_project_path_arg(parser, help='Path to the project directory.')
 
 
-def create_profile_args(parser: argparse.ArgumentParser):
-    """Parses argument for `create profile` command."""
-    pass_existing_project_path_arg(parser, help=('Path where the project '
-                                                 'already exists.'))
-
-
 def create_venv_args(parser: argparse.ArgumentParser):
-    """Parses argument for `create venv` command."""
+    """Parses argument for ``create venv`` command."""
     pass_venv_name_arg(parser, help='Name of the virtual environment.')
-    pass_existing_project_path_arg(parser, help=('Path where the project '
-                                                 'already exists.'))
+    pass_project_path_arg(parser, help='Path to the project directory.')
