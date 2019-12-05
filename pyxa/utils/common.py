@@ -29,7 +29,7 @@ import logging
 import os
 import subprocess
 import sys
-from typing import Union
+from typing import List, Optional, Union
 
 from pyxa.utils.settings import DEFAULT_LOG_LEVEL, ENV_LOG_LEVEL_NAME
 
@@ -92,3 +92,38 @@ def set_log_level(log_level: Union[int, str] = None) -> None:
         log_level = logging.getLevelName(log_level)
 
     logging.getLogger('pyxa').setLevel(log_level)
+
+
+def find_string(string: str,
+                string_list: List,
+                min_score: Optional[int] = 70) -> Optional[str]:
+    """Finds string in a list.
+
+    Finds the matching string in the list and works similar to
+    ``.find()`` but uses fuzzy logic for guessing text from any valid
+    list
+
+    Args:
+        string: Approximate or Exact string to find from the list.
+        string_list: List in which the string needs to be searched in.
+        min_score: Minimum score needed to make an approximate guess.
+                   Default: 70
+
+    Returns:
+        str value to be searched from the string.
+
+    Raises:
+        ValueError: If the string couldn't be found in the passed list.
+    """
+    from fuzzywuzzy.fuzz import partial_ratio
+    from fuzzywuzzy.process import extract
+
+    # This will give us list of 3 best matches for our search query.
+    guessed = extract(string, string_list, limit=3, scorer=partial_ratio)
+
+    for best_guess in guessed:
+        current_score = partial_ratio(string, best_guess)
+        if current_score > min_score and current_score > 0:
+            return best_guess[0]
+        else:
+            raise ValueError(f'Couldn\'t find "{string}" in the given list.')
