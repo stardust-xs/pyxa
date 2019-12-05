@@ -30,7 +30,7 @@ AI_NAME = 'Charlotte'
 # This package adheres to Semantic Versioning Specification (SemVer)
 # starting with version 0.0.1.
 # You can read about it here: https://semver.org/spec/v2.0.0.html
-PACKAGE_VERSION = '0.0.2a1'
+PACKAGE_VERSION = '0.0.2'
 
 # Author details.
 AUTHOR = 'XA'
@@ -48,6 +48,10 @@ LANGUAGE_CODE = 'en-gb'
 
 # Default encoding used for all read-write objects.
 DEFAULT_CHARSET = 'utf-8'
+
+# Default urls.
+DEFAULT_PING_URL = 'https://www.google.com/'
+DEFAULT_WEATHER_URL = 'https://api.darksky.net/forecast/'
 
 # Default package structure.
 # You can override this later. pyXA recommends against doing it.
