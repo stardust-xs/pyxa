@@ -28,9 +28,8 @@ given name.
 
 import argparse
 import os
-from pyxa.utils.common import check_version
 import subprocess
-from typing import List, Optional
+from typing import List
 
 from pyxa.cli import strings
 from pyxa.cli.formatter import PyXAHelpFormatter as HelpFormatter

@@ -39,7 +39,6 @@ class PyXAHelpFormatter(argparse.RawTextHelpFormatter):
         """Captilizes the usage text."""
         if prefix is None:
             prefix = 'Usage: ' + '\n' + '  '
-
         return super(PyXAHelpFormatter, self).add_usage(
             usage, actions, groups, prefix)
 

@@ -7,6 +7,16 @@
 All notable changes to this project will be documented in this file.<br>
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) starting with version 0.0.1.
 
+## [Stable releases]
+### [0.0.2] - 2019-12-05
+#### Added
+- ported important modules like `constants.py`, `dataset.py`, `location.py`, `system.py` and `weather.py` from Charlotte.
+- `find_string` function from Charlotte.
+- `DEFAULT_WEATHER_URL` for making weather related API calls.
+
+#### Fixed
+- linting issues with some files.
+
 ## [Alpha release]
 ### [0.0.2a1] - 2019-11-29
 
@@ -48,7 +58,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - `user.py` module and creating profile functionality.
 - strings associated with `profile` subparser object from `strings.py`.
 
-## [Stable releases]
 ### [0.0.1rc1] - 2019-11-21
 
 #### Added
