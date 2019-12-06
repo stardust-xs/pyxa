@@ -7,6 +7,14 @@
 All notable changes to this project will be documented in this file.<br>
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html) starting with version 0.0.1.
 
+## [Unreleased]
+### [0.0.3] - 2019-12-06
+### Added
+- new function `resolve_days` (old one is now `resolve_number_of_days`).
+
+### Changed
+- old `resolve_days` function to `resolve_number_of_days`.
+
 ## [Stable releases]
 ### [0.0.2] - 2019-12-05
 #### Added
