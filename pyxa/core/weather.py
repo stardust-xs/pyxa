@@ -31,7 +31,7 @@ import requests
 
 from pyxa.core.location import get_coordinates, get_part_of_day
 from pyxa.utils.settings import DEFAULT_WEATHER_URL
-from pyxa.utils.system import check_internet, resolve_days
+from pyxa.utils.system import check_internet, resolve_number_of_days
 
 
 def wind_direction(degree: Union[float, int]) -> str:
@@ -149,7 +149,7 @@ def forecast(maps_key: str,
         sky = 'brighter' if cloud < 0.5 else 'darker'
         direction = wind_direction(data['windBearing'])
         part = get_part_of_day()
-        day = resolve_days(days)
+        day = resolve_number_of_days(days)
         sub = 'day' if days == 1 else 'days'
 
         return (zone, idx, temp, feel, max_temp, min_temp, humidity, speed,
