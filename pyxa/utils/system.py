@@ -164,7 +164,7 @@ def find_file(file: str,
             raise FileNotFoundError('File not found.')
 
 
-def resolve_days(days: Optional[int] = None) -> Union[int, str]:
+def resolve_number_of_days(days: Optional[int] = None) -> Union[int, str]:
     """Returns day."""
     week = ['monday',
             'tuesday',
@@ -190,3 +190,26 @@ def resolve_days(days: Optional[int] = None) -> Union[int, str]:
         return list(islice(cycle(week), idx, idx + 1))[0]
     else:
         return days
+
+
+def resolve_day(day: str, next_week: Optional[bool] = False) -> int:
+    """Resolves day to index value."""
+    week = ['monday',
+            'tuesday',
+            'wednesday',
+            'thursday',
+            'friday',
+            'saturday',
+            'sunday']
+
+    today = datetime.now()
+    today_idx = date.weekday(today)
+
+    day_idx = week.index(day)
+
+    temp_list = list(islice(cycle(week), today_idx, 2 * today_idx + day_idx))
+
+    if next_week:
+        return len(temp_list) - 1
+    else:
+        return temp_list.index(day)
