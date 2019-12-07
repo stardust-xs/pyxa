@@ -24,7 +24,6 @@ with relative ease.
 # pylint: disable=import-error
 # pylint: disable=no-name-in-module
 
-import os
 from typing import Optional, Tuple, Union
 
 import requests
