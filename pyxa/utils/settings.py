@@ -1,4 +1,4 @@
-# Copyright 2019 XAMES3. All Rights Reserved.
+# Copyright 2020 XAMES3. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ AI_NAME = 'Charlotte'
 # This package adheres to Semantic Versioning Specification (SemVer)
 # starting with version 0.0.1.
 # You can read about it here: https://semver.org/spec/v2.0.0.html
-PACKAGE_VERSION = '0.0.2'
+PACKAGE_VERSION = '0.0.3'
 
 # Author details.
 AUTHOR = 'XA'
