@@ -43,16 +43,10 @@ pyXA is an open source software library for high-performance complex
 functional programming. Its flexible architecture allows easy deployment
 of its functional usage across a variety of domains.<br>
 Originally inspired by [TensorFlow](https://www.tensorflow.org/) & [Rasa](https://rasa.com/), it comes with strong support
-for continuous updates, reliable functions and overall ease of use.
-
-## Let's get Started
-Yes, I need to update a lot here... \*sigh*
+for ~~continuous~~ updates, reliable functions and overall ease of use.
 
 ## Changelog
 You can find all the updates happening/made to this project [here](https://github.com/xames3/pyxa/blob/master/changelog.md).
 
-## Contributors
-As of now, it's just me... \*sigh*. Feel free to contribute.
-
 ## License
-Licensed under the [Apache License 2.0](https://github.com/xames3/pyxa/blob/master/LICENSE). Copyright 2019 XAMES3.
+Licensed under the [Apache License 2.0](https://github.com/xames3/pyxa/blob/master/LICENSE). Copyright 2020 XAMES3.
