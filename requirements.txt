@@ -1,7 +1,6 @@
-fuzzywuzzy
+rapidfuzz
 geocoder
 geolocation-python
 googlemaps
 hurry.filesize
-python-Levenshtein
 reverse-geocode

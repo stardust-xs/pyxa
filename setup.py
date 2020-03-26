@@ -43,12 +43,11 @@ DOCLINES = __doc__.split('\n')
 VERSION = PACKAGE_VERSION
 
 REQUIRED_PACKAGES = [
-    'fuzzywuzzy',
+    'rapidfuzz',
     'geocoder',
     'geolocation-python',
     'googlemaps',
     'hurry.filesize',
-    'python-Levenshtein',
     'reverse-geocode']
 
 
