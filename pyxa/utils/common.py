@@ -115,8 +115,8 @@ def find_string(string: str,
     Raises:
         ValueError: If the string couldn't be found in the passed list.
     """
-    from fuzzywuzzy.fuzz import partial_ratio
-    from fuzzywuzzy.process import extract
+    from rapidfuzz.fuzz import partial_ratio
+    from rapidfuzz.process import extract
 
     # This will give us list of 3 best matches for our search query.
     guessed = extract(string, string_list, limit=3, scorer=partial_ratio)

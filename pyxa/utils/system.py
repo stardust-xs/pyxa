@@ -147,8 +147,8 @@ def find_file(file: str,
     Raises:
         FileNotFoundError: If file not found.
     """
-    from fuzzywuzzy.fuzz import partial_ratio
-    from fuzzywuzzy.process import extract
+    from rapidfuzz.fuzz import partial_ratio
+    from rapidfuzz.process import extract
 
     # This will give us list of 3 best matches for our search query.
     guessed = extract(file,
