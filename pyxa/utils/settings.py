@@ -34,7 +34,7 @@ PACKAGE_VERSION = '0.0.3'
 
 # Author details.
 AUTHOR = 'XA'
-AUTHOR_EMAIL = MAINTAINER_EMAIL = 'xames3.developer@gmail.com'
+AUTHOR_EMAIL = MAINTAINER_EMAIL = 'xames3.spam@gmail.com'
 
 # Local time zone details.
 # You can find all the choices here:
