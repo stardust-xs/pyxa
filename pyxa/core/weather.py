@@ -40,7 +40,8 @@ def wind_direction(degree: Union[float, int]) -> str:
     idx = int((degree + 11.25) / 22.5)
     return directions[idx % len(directions)]
 
-
+# This function will no longer be usuable since DarkSky has been bought
+# by Apple.
 def forecast(maps_key: str,
              darksky_key: str,
              location: Optional[str] = None,
